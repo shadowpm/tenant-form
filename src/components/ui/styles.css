@@ -1,0 +1,35 @@
+.heading {
+  margin: 0.5rem;
+  padding-bottom: 2rem;
+}
+
+.button-container {
+    margin: 0.5rem;
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.back-button {
+  margin-right: 1rem;
+}
+
+.progress-bar {
+  position: fixed;
+  bottom: 0;
+  padding-bottom: 4rem;
+  width: calc(100% - 8rem);
+}
+
+@media only screen and (max-width: 600px) {
+  .progress-bar {
+    width: calc(100% - 6rem);
+  }
+}
+
+@media (min-width: 400px) and (max-width: 600px) {
+  .progress-bar {
+    width: calc(100% - 10rem);
+  }
+}
