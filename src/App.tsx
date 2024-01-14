@@ -1,25 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import "./App.css";
+import { useCustomState } from "./stateManagement/useCustomState";
+import PhoneNumberForm from "./components/phoneNumberForm/PhoneNumberForm";
+import EmailForm from "./components/emailForm/EmailForm";
+import NameForm from "./components/nameForm/NameForm";
+import SalaryForm from "./components/salaryForm/SalaryForm";
+import Summary from "./components/summary/Summary";
 
 function App() {
+  const { Provider } = useCustomState();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider>
+      <div className="App">
+        <Router>
+          <Routes>
+            <Route path="/" element={<NameForm />} />
+            <Route path="/email" element={<EmailForm />} />
+            <Route path="/phone-number" element={<PhoneNumberForm />} />
+            <Route path="/salary" element={<SalaryForm />} />
+            <Route path="/summary" element={<Summary />} />
+          </Routes>
+        </Router>
+      </div>
+    </Provider>
   );
 }
 
