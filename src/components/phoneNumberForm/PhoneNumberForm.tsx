@@ -15,7 +15,7 @@ const PhoneNumberForm = () => {
   };
 
   const handleNextClick = () => {
-    if (phoneNumber) {
+    if (phoneNumber.trim()) {
       dispatch({ type: "SET_PHONE", payload: phoneNumber });
       navigate("/salary");
     } else {

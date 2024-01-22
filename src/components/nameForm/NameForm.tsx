@@ -15,7 +15,8 @@ const NameForm = () => {
   };
 
   const handleNextClick = () => {
-    if (fullName) {
+    //added now
+    if (fullName.trim()) {
       dispatch({ type: "SET_NAME", payload: fullName });
       navigate("/email");
     } else {

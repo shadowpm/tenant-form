@@ -22,7 +22,7 @@ const EmailForm = () => {
   };
 
   const handleNextClick = () => {
-    if (email && !isEmailValid(email)) {
+    if (email.trim() && !isEmailValid(email)) {
       setError(true);
       setInvaldEmail(true);
     }
