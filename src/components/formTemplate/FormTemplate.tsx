@@ -39,7 +39,7 @@ const FormTemplate: React.FC<Props> = ({
       noValidate
       autoComplete="off"
       onSubmit={handleNextClick}
->
+    >
       <div>
         <PageHeading heading={heading} />
         <TextField
